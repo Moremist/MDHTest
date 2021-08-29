@@ -33,8 +33,8 @@ class ResultsViewController: UIViewController {
                 }
                 self.resultArray += data.results
                 DispatchQueue.main.async {
-                    self.collectionView.reloadData()
                     complition()
+                    self.collectionView.reloadData()
                 }
             }
         }
@@ -52,6 +52,7 @@ extension ResultsViewController: UICollectionViewDelegate, UICollectionViewDataS
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: collectionViewCellID, for: indexPath) as! ResultCollectionViewCell
+        cell.imageView.image = nil
         let photoURLString = resultArray[indexPath.row].urls.regular
         guard let photoURL = URL(string: photoURLString) else {
             return cell
@@ -61,6 +62,7 @@ extension ResultsViewController: UICollectionViewDelegate, UICollectionViewDataS
         
         return cell
     }
+    
     
     
 }
