@@ -2,7 +2,6 @@ import Foundation
 
 struct API {
     let accessKey = "y6GBW3R-3Wmm_Uetd_BHLds5wWLAn39Ik7LjHqGnR_c"
-    let secretKey = "V8ErSVGRMbqa6ah0_T9edqRJ5-Cw-GAwROeqstQaqp8"
     
     let searchURLString = "https://api.unsplash.com/search/photos"
     let pageURLString = "?page="

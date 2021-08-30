@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1FD31E5A4F3F1ACFCE5B7832 /* Pods_MDHTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EABAC4AC56CEC9BB2952843A /* Pods_MDHTest.framework */; };
+		6F4954B726DCDD3600814765 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F4954B626DCDD3600814765 /* placeholder.png */; };
 		6F699F2926DBB5FF0027B85D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F699F2826DBB5FF0027B85D /* AppDelegate.swift */; };
 		6F699F2B26DBB5FF0027B85D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F699F2A26DBB5FF0027B85D /* SceneDelegate.swift */; };
 		6F699F2D26DBB5FF0027B85D /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F699F2C26DBB5FF0027B85D /* SearchViewController.swift */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		32265317195FF4C597B7D0A6 /* Pods-MDHTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MDHTest.debug.xcconfig"; path = "Target Support Files/Pods-MDHTest/Pods-MDHTest.debug.xcconfig"; sourceTree = "<group>"; };
+		6F4954B626DCDD3600814765 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
 		6F699F2526DBB5FF0027B85D /* MDHTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MDHTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F699F2826DBB5FF0027B85D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6F699F2A26DBB5FF0027B85D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -32,6 +36,8 @@
 		6F699F3E26DBBB3F0027B85D /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		6F699F4026DBBF7B0027B85D /* ResultCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCollectionViewCell.swift; sourceTree = "<group>"; };
 		6F699F4226DBC5CA0027B85D /* ResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultModel.swift; sourceTree = "<group>"; };
+		D61032A1970AD874897C2ACC /* Pods-MDHTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MDHTest.release.xcconfig"; path = "Target Support Files/Pods-MDHTest/Pods-MDHTest.release.xcconfig"; sourceTree = "<group>"; };
+		EABAC4AC56CEC9BB2952843A /* Pods_MDHTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MDHTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,17 +45,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FD31E5A4F3F1ACFCE5B7832 /* Pods_MDHTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		203C109325143DBD92381F46 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				32265317195FF4C597B7D0A6 /* Pods-MDHTest.debug.xcconfig */,
+				D61032A1970AD874897C2ACC /* Pods-MDHTest.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		6F699F1C26DBB5FE0027B85D = {
 			isa = PBXGroup;
 			children = (
 				6F699F2726DBB5FF0027B85D /* MDHTest */,
 				6F699F2626DBB5FF0027B85D /* Products */,
+				203C109325143DBD92381F46 /* Pods */,
+				9595920828FC43280ADFBC8A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -95,12 +113,21 @@
 		6FE99DCD26DC02E2004FD56E /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				6F4954B626DCDD3600814765 /* placeholder.png */,
 				6F699F3126DBB6050027B85D /* Assets.xcassets */,
 				6F699F3C26DBB6B60027B85D /* API.swift */,
 				6F699F2826DBB5FF0027B85D /* AppDelegate.swift */,
 				6F699F2A26DBB5FF0027B85D /* SceneDelegate.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		9595920828FC43280ADFBC8A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EABAC4AC56CEC9BB2952843A /* Pods_MDHTest.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -110,9 +137,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6F699F3926DBB6050027B85D /* Build configuration list for PBXNativeTarget "MDHTest" */;
 			buildPhases = (
+				8920F1DF72556F179E1A1EED /* [CP] Check Pods Manifest.lock */,
 				6F699F2126DBB5FF0027B85D /* Sources */,
 				6F699F2226DBB5FF0027B85D /* Frameworks */,
 				6F699F2326DBB5FF0027B85D /* Resources */,
+				350D1D9AA922598AE5A774F0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -161,12 +190,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				6F699F3526DBB6050027B85D /* LaunchScreen.storyboard in Resources */,
+				6F4954B726DCDD3600814765 /* placeholder.png in Resources */,
 				6F699F3226DBB6050027B85D /* Assets.xcassets in Resources */,
 				6F699F3026DBB5FF0027B85D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		350D1D9AA922598AE5A774F0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MDHTest/Pods-MDHTest-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MDHTest/Pods-MDHTest-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MDHTest/Pods-MDHTest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8920F1DF72556F179E1A1EED /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MDHTest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6F699F2126DBB5FF0027B85D /* Sources */ = {
@@ -323,6 +395,7 @@
 		};
 		6F699F3A26DBB6050027B85D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 32265317195FF4C597B7D0A6 /* Pods-MDHTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -342,6 +415,7 @@
 		};
 		6F699F3B26DBB6050027B85D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D61032A1970AD874897C2ACC /* Pods-MDHTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

@@ -7,6 +7,9 @@ class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        searchTextField.delegate = self
+        
         setupButton()
     }
     
@@ -22,5 +25,14 @@ class SearchViewController: UIViewController {
             vc.userRequestText = searchTextField.text!
             present(vc, animated: true, completion: nil)
         }
+    }
+}
+
+
+extension SearchViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        searchTextField.resignFirstResponder()
+        searchButtonPressed()
+        return true
     }
 }

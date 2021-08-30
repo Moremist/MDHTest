@@ -1,9 +1,10 @@
 import UIKit
+import Kingfisher
 
 class ResultsViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
-    private let sectionInsets = UIEdgeInsets(top: 25.0, left: 10.0, bottom: 25.0, right: 10.0)
+    private let sectionInsets = UIEdgeInsets(top: 10.0, left: 10.0, bottom: 10.0, right: 10.0)
     private let itemsPerRow: CGFloat = 2
     private let collectionViewCellID = "resultCell"
     private var isLoading = false
@@ -21,10 +22,10 @@ class ResultsViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        downloadPhotos(forPage: currentPage, complition: {} )
+        downloadPhotosFrom(Page: currentPage, complition: {} )
     }
     
-    func downloadPhotos(forPage: Int, complition: @escaping () -> ()) {
+    func downloadPhotosFrom(Page: Int, complition: @escaping () -> ()) {
         nextPage()
         DispatchQueue.global(qos: .userInteractive).async {
             self.api.fetchPhotos(for: self.userRequestText, page: self.currentPage) { data in
@@ -52,13 +53,15 @@ extension ResultsViewController: UICollectionViewDelegate, UICollectionViewDataS
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: collectionViewCellID, for: indexPath) as! ResultCollectionViewCell
+        
         cell.imageView.image = nil
-        let photoURLString = resultArray[indexPath.row].urls.regular
+        
+        let photoURLString = resultArray[indexPath.row].urls.small
         guard let photoURL = URL(string: photoURLString) else {
             return cell
         }
         
-        cell.downloadPhoto(url: photoURL)
+        cell.imageView.kf.setImage(with: photoURL, placeholder: UIImage(named: "placeholder.png"))
         
         return cell
     }
@@ -88,9 +91,9 @@ extension ResultsViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if !isLoading {
             let pos = scrollView.contentOffset.y
-            if pos > (collectionView.contentSize.height - 100 - scrollView.frame.size.height) {
+            if pos > (collectionView.contentSize.height - 300 - scrollView.frame.size.height) {
                 isLoading = true
-                self.downloadPhotos(forPage: currentPage) {
+                self.downloadPhotosFrom(Page: currentPage) {
                     self.isLoading = false
                 }
             }
